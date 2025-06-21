@@ -1,47 +1,41 @@
 {
   "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/index/index.html"
+      "source": "/",
+      "destination": "/index/index.html"
     },
     {
-      "src": "/login",
-      "dest": "/login/login.html"
+      "source": "/login",
+      "destination": "/login/login.html"
     },
     {
-      "src": "/menu",
-      "dest": "/menu/menu.html"
+      "source": "/menu",
+      "destination": "/menu/menu.html"
     },
     {
-      "src": "/order",
-      "dest": "/order/order.html"
+      "source": "/order",
+      "destination": "/order/order.html"
     },
     {
-      "src": "/payment",
-      "dest": "/payment/payment.html"
+      "source": "/payment",
+      "destination": "/payment/payment.html"
     },
     {
-      "src": "/admin",
-      "dest": "/admin/admin.html"
+      "source": "/admin",
+      "destination": "/admin/admin.html"
     },
     {
-      "src": "/profile",
-      "dest": "/profil/profile.html"
+      "source": "/profile",
+      "destination": "/profil/profile.html"
     },
     {
-      "src": "/profil",
-      "dest": "/profil/profile.html"
-    },
-    {
-      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index/index.html"
+      "source": "/profil",
+      "destination": "/profil/profile.html"
     }
   ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
