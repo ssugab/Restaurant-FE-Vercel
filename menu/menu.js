@@ -5,7 +5,7 @@ let categories = [];
 
 // API Configuration - Support both development and production
 // Updated: Railway URL configured for production deployment
-const API_BASE_URL = 'https://handsome-blessing-production.up.railway.app/api';
+const API_BASE_URL = 'https://graceful-benevolence-production.up.railway.app/api';
 
 // Debug logging for URL verification
 console.log('🔧 DEBUG: Current hostname:', window.location.hostname);

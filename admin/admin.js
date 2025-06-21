@@ -1,5 +1,5 @@
 // API Configuration - Support both development and production
-const API_BASE_URL = 'https://handsome-blessing-production.up.railway.app/api';
+const API_BASE_URL = 'https://graceful-benevolence-production.up.railway.app/api';
 
 // Check authentication and admin role
 function checkAdminAuth() {
