@@ -1,8 +1,10 @@
 {
-  "version": 2,
-  "buildCommand": "echo 'No build required for static files'",
-  "outputDirectory": "./",
-  "installCommand": "echo 'No packages to install'",
+  "builds": [
+    {
+      "src": "**",
+      "use": "@vercel/static"
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
@@ -25,35 +27,81 @@
       "destination": "/payment/payment.html"
     },
     {
+      "source": "/profil",
+      "destination": "/profil/profile.html"
+    },
+    {
       "source": "/admin",
       "destination": "/admin/admin.html"
     },
     {
-      "source": "/profile",
-      "destination": "/profil/profile.html"
+      "source": "/index.js",
+      "destination": "/index/index.js"
     },
     {
-      "source": "/profil",
-      "destination": "/profil/profile.html"
+      "source": "/index.css",
+      "destination": "/index/index.css"
+    },
+    {
+      "source": "/login.js",
+      "destination": "/login/login.js"
+    },
+    {
+      "source": "/login.css",
+      "destination": "/login/login.css"
+    },
+    {
+      "source": "/menu.js",
+      "destination": "/menu/menu.js"
+    },
+    {
+      "source": "/menu.css",
+      "destination": "/menu/menu.css"
+    },
+    {
+      "source": "/order.js",
+      "destination": "/order/order.js"
+    },
+    {
+      "source": "/order.css",
+      "destination": "/order/order.css"
+    },
+    {
+      "source": "/payment.js",
+      "destination": "/payment/payment.js"
+    },
+    {
+      "source": "/payment.css",
+      "destination": "/payment/payment.css"
+    },
+    {
+      "source": "/profile.js",
+      "destination": "/profil/profile.js"
+    },
+    {
+      "source": "/profile.css",
+      "destination": "/profil/profile.css"
+    },
+    {
+      "source": "/admin.js",
+      "destination": "/admin/admin.js"
+    },
+    {
+      "source": "/admin.css",
+      "destination": "/admin/admin.css"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
     }
   ],
-  "cleanUrls": true,
-  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
         {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
         }
       ]
     }
