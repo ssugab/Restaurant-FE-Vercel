@@ -1,0 +1,26 @@
+{
+  "name": "restaurant-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Restaurant Menu Management System",
+  "main": "index/index.html",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "build": "echo 'No build step required for static files'",
+    "start": "echo 'This is a static site - no server needed'"
+  },
+  "keywords": [
+    "restaurant",
+    "menu",
+    "frontend",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssugab/Restaurant-FE-Vercel.git"
+  }
+} 

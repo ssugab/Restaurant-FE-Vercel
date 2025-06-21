@@ -1,0 +1,241 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white !important;
+}
+
+/* Payment Header */
+.payment-header h1 {
+    color: white;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+.payment-header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card-header {
+    border-bottom: none;
+    font-weight: 500;
+}
+
+/* Order Summary Styles */
+.order-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item-name {
+    font-weight: 500;
+    color: #333;
+}
+
+.order-item-details {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.order-item-price {
+    font-weight: 600;
+    color: #28a745;
+}
+
+/* Payment Method Cards */
+.payment-method-card {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.payment-method-card:hover {
+    border-color: #007bff;
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method-card .form-check-input:checked + .form-check-label {
+    color: #007bff;
+}
+
+.payment-method-card .form-check-input:checked ~ .payment-method-card,
+.form-check-input:checked + .form-check-label .payment-method-card {
+    border-color: #007bff;
+    background-color: #e3f2fd;
+}
+
+.payment-method-card .form-check-label {
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+}
+
+.payment-method-card i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.payment-method-card div {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Form Styles */
+.form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 0.75rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-label i {
+    margin-right: 0.5rem;
+    color: #666;
+}
+
+/* Button Styles */
+.btn {
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    border: none;
+}
+
+.btn-success:hover {
+    background: linear-gradient(45deg, #1e7e34, #1a9b84);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+.btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    transform: translateY(-2px);
+}
+
+/* Total Amount */
+#totalAmount {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Loading States */
+.spinner-border {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Success Modal */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .payment-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .payment-method-card {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+/* Animation for form submission */
+.submitting {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.submitting .btn {
+    position: relative;
+}
+
+.submitting .btn::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s ease infinite;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} 

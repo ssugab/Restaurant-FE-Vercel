@@ -1,0 +1,65 @@
+{
+  "version": 2,
+  "functions": {},
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index/index.html"
+    },
+    {
+      "src": "/login",
+      "dest": "/login/login.html"
+    },
+    {
+      "src": "/menu",
+      "dest": "/menu/menu.html"
+    },
+    {
+      "src": "/order",
+      "dest": "/order/order.html"
+    },
+    {
+      "src": "/payment",
+      "dest": "/payment/payment.html"
+    },
+    {
+      "src": "/admin",
+      "dest": "/admin/admin.html"
+    },
+    {
+      "src": "/profile",
+      "dest": "/profil/profile.html"
+    },
+    {
+      "src": "/profil",
+      "dest": "/profil/profile.html"
+    },
+    {
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+} 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant - Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MakanYuk!</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex align-items-center ms-auto">
+                    <a href="#" class="btn btn-light position-relative me-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="../profil/profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="../order/order.html">Orders History</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../login/login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header with Background Image -->
+    <header class="hero-header">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content text-center">
+                    <h1 class="hero-title">Welcome to MakanYuk!</h1>
+                    <p class="hero-subtitle">Discover our delicious menu and place your order today</p>
+                    <div class="hero-buttons d-flex justify-content-center">
+                        <a href="#menu-section" class="btn btn-primary btn-lg me-3">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="menu-section">
+        <div class="text-center mb-5">
+            <h2 class="section-title mb-4">Our Menu</h2>
+            <p class="section-subtitle mb-4">Choose from our delicious selection of dishes</p>
+            <div class="btn-group" role="group">
+                <button type="button" class="category-btn active">All</button>
+                <button type="button" class="category-btn">Main Course</button>
+                <button type="button" class="category-btn">Desserts</button>
+                <button type="button" class="category-btn">Drinks</button>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Menu items will be loaded dynamically from backend -->
+            <div class="col-12 text-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Loading menu items...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog" style="max-width: 800px;">
+            <div class="modal-content p-0" style="border-radius: 12px; overflow: hidden;">
+                <div class="order-container" style="box-shadow:none; max-width:100%; margin:0; padding:0;">
+                    <div class="order-header" style="padding: 20px 20px 0 20px;">
+                        <h1 style="font-size:1.2rem; margin-bottom:0;">Your Cart</h1>
+                        <p class="order-subtitle" style="font-size:0.95rem;">Review your selected items</p>
+                    </div>
+                    <div class="order-content" style="display: flex; flex-direction: row; gap: 16px; padding: 0 20px 20px 20px; justify-content: space-between;">
+                        <div class="order-items" style="box-shadow:none; padding:0; min-width:180px;">
+                            <div id="cartItems"></div>
+                        </div>
+                        <div class="order-summary" style="box-shadow:none; padding: 12px 10px;">
+                            <h2 style="font-size:1rem; margin-bottom:10px;">Order Summary</h2>
+                            <div class="summary-item" style="font-size:0.95rem;">
+                                <span>Subtotal</span>
+                                <span id="cartSubtotal">$0.00</span>
+                            </div>
+                            <div class="summary-item" style="font-size:0.95rem;">
+                                <span>Tax</span>
+                                <span id="cartTax">$0.00</span>
+                            </div>
+                            <div class="summary-item total" style="font-size:1.05rem;">
+                                <span>Total</span>
+                                <span id="cartTotal">$0.00</span>
+                            </div>
+                            <button type="button" class="btn-checkout mt-3 w-100" style="font-size:0.95rem; padding:8px 0;" onclick="checkout()">Checkout</button>
+                            <button type="button" class="btn btn-secondary w-100 mt-2" style="font-size:0.95rem; padding:8px 0;" data-bs-dismiss="modal">Continue Shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container for Notifications -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="addToCartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong class="me-auto">Success!</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Item added to cart successfully!
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>
